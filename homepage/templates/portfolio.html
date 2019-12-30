@@ -1,0 +1,147 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!--
+Design by TEMPLATED
+http://templated.co
+Released for free under the Creative Commons Attribution License
+
+Name       : Swarming 
+Description: A two-column, fixed-width design with dark color scheme.
+Version    : 1.0
+Released   : 20131201
+
+-->
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900" rel="stylesheet" />
+<link href="/static/default.css" rel="stylesheet" type="text/css" media="all" />
+<link href="/static/fonts.css" rel="stylesheet" type="text/css" media="all" />
+
+<!-- element -->
+<link rel="stylesheet" href="/static/element.css">
+<script src="/static/vue.js"></script>
+<script src="/static/element.js"></script>
+
+<title>Portfolio | {{ server }}</title>
+
+<!--[if IE 6]><link href="default_ie6.css" rel="stylesheet" type="text/css" /><![endif]-->
+
+</head>
+<body>
+<div id="logo">
+	<h1><a href="#" class="icon icon-group"><span>{{ server }} | Portfolio</span></a></h1>
+</div>
+<div id="header">
+	<div id="menu" class="container">
+		<ul>
+			<li><a href="/" accesskey="1" title="">Home Page</a></li>
+			<li><a href="/projects" accesskey="2" title="">My Projects</a></li>
+			<li class="current_page_item"><a href="#" accesskey="3" title="">Portfolio</a></li>
+		</ul>
+	</div>
+</div>
+<div id="page-wrapper">
+<div id="page" class="container" style="padding: 10px;">
+	<el-row>
+		<el-col :span="16">
+		<div style="font-size: 32px; font-weight: bold;">{{ info.firstname }} {{ info.lastname }}</div>
+		</el-col>
+		<el-col :span="8">
+		<div style="font-size: 16px; font-style: italic;">Email: {{ info.email }}</div>
+		<div style="font-size: 16px; font-style: italic;">Phone: {{ info.phone }}</div>
+		</el-col>
+	</el-row>
+	{% if info.address %}
+	<el-row>
+		<el-col :span="24">
+			<div style="font-size: 14px;">{{ info.address }}</div>
+		</el-col>
+	</el-row>
+	{% endif %}
+	<hr />
+	<el-row>
+		<el-col :span="24">
+			<div style="font-size: 24px; font-weight: bold;">Educations</div>
+		</el-col>
+	</el-row>
+	{% for state in states%}
+	{% if state.choice == 'E' %}
+	<el-row>
+		<el-col :span="16">
+			<div style="font-size: 20px;">{{ state.name }}</div>
+		</el-col>
+		<el-col :span="8">
+			<div style="font-size: 14px;">{{ state.date_begin | date:"N Y" }} - {{ state.date_end | date:"N Y" }}</div>
+		</el-col>
+	</el-row>
+	<el-row>
+		<el-col :span="24">
+			<div style="font-size: 14px;">{{ state.desc | linebreaks }}</div>
+		</el-col>
+	</el-row>
+	{% endif %}
+	{% endfor %}
+	<hr />
+	<el-row>
+		<el-col :span="24">
+			<div style="font-size: 24px; font-weight: bold;">Honors and Awards</div>
+		</el-col>
+	</el-row>
+	{% for state in states%}
+	{% if state.choice == 'A' %}
+	<el-row>
+		<el-col :span="16">
+			<div style="font-size: 20px;">{{ state.name }}</div>
+		</el-col>
+		<el-col :span="8">
+			<div style="font-size: 14px;">{{ state.date_begin | date:"N Y" }} - {{ state.date_end | date:"N Y" }}</div>
+		</el-col>
+	</el-row>
+	<el-row>
+		<el-col :span="24">
+			<div style="font-size: 14px;">{{ state.desc | linebreaks }}</div>
+		</el-col>
+	</el-row>
+	{% endif %}
+	{% endfor %}
+	<hr />
+	<el-row>
+		<el-col :span="24">
+			<div style="font-size: 24px; font-weight: bold;">Researches and Projects</div>
+		</el-col>
+	</el-row>
+	{% for state in states%}
+	{% if state.choice == 'P' %}
+	<el-row>
+		<el-col :span="16">
+			<div style="font-size: 20px;">{{ state.name }}</div>
+		</el-col>
+		<el-col :span="8">
+			<div style="font-size: 14px;">{{ state.date_begin | date:"N Y" }} - {{ state.date_end | date:"N Y" }}</div>
+		</el-col>
+	</el-row>
+	<el-row>
+		<el-col :span="24">
+			<div style="font-size: 14px;">{{ state.desc | linebreaks }}</div>
+		</el-col>
+	</el-row>
+	{% endif %}
+	{% endfor %}
+	{% if info.footage %}
+	<hr />
+	<div>
+	{{ info.footage | linebreaks }}
+	</div>
+	{% endif %}
+</div>
+</div>
+<div id="copyright" class="container">
+	<p>{{ url }}. | Design by <a href="http://templated.co" rel="nofollow">TEMPLATED</a>.</p>
+</div>
+</body>
+<script>
+new Vue().$mount('#page');
+</script>
+</html>
