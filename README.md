@@ -3,7 +3,7 @@ My Home Website. Note that you need to configure basic website detail under admi
 
 ## Run the server in debug mode
 
-./manage.py runserver <ip>:<port.
+./manage.py runserver <ip>:<port>
 
 ## Requirements
 
