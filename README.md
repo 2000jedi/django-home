@@ -4,6 +4,7 @@ My Home Website. Note that you need to configure basic website detail under admi
 ## Initial Configuration
 
 > ./manage.py makemigrations
+
 > ./manage.py migrate
 
 You also need to create an admin account.
