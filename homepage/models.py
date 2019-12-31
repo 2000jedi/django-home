@@ -12,7 +12,7 @@ class HomeConfig(models.Model):
     title    = models.CharField(max_length=100)
     serv_url = models.CharField(max_length=100, default='my server')
     desc     = models.TextField()
-    photo    = models.ImageField(null=True, upload_to='selfie')
+    photo    = models.ImageField(null=True, blank=True, upload_to='selfie')
 
 class Project(models.Model):
     title      = models.CharField(max_length=100, primary_key=True, unique=True)
