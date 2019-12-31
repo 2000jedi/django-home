@@ -135,3 +135,6 @@ dmypy.json
 collected_statics/
 media/
 db.sqlite3
+
+# Django settings is only a reference
+blog/settings.py

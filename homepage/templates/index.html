@@ -45,20 +45,24 @@ Released   : 20131201
 </div>
 <div id="page-wrapper">
 <div id="page" class="container">
-	<div id="content">
-		<div class="title">
-			<h2>Welcome to {{ server }}!</h2>
-			<span class="byline">-- {{ title }}</span>
-		</div>
-		<p>{{ desc | linebreaks | escape }}</p>
-	</div>
-	<div id="sidebar"><a href="#" class="image image-full">
-	{% if selfie %}
-	<img src="{{ MEDIA_URL }}{{ selfie }}" alt="" />
-	{% else %}
-	<img src="/static/images/pic05.jpg" alt="" />
-	{% endif %}
-	</a></div>
+	<el-row :gutter="20">
+		<el-col :span="12" id="content">
+			<div class="title">
+				<h2>Welcome to {{ server }}!</h2>
+				<span class="byline">-- {{ title }}</span>
+			</div>
+			<p>{{ desc | linebreaks | escape }}</p>
+		</el-col>
+		<el-col :span="12">
+			<a href="#" class="image image-full">
+			{% if selfie %}
+			<img src="{{ MEDIA_URL }}{{ selfie }}" alt="" />
+			{% else %}
+			<img src="/static/images/pic05.jpg" alt="" />
+			{% endif %}
+			</a>
+		</el-col>
+	</el-row>
 </div>
 </div>
 <div id="featured-wrapper">
@@ -148,10 +152,10 @@ Released   : 20131201
 </div>
 -->
 <div id="copyright" class="container">
-	<p>{{ url }}. | Design by <a href="http://templated.co" rel="nofollow">TEMPLATED</a>.</p>
+	<p>{{ url }} | Design by <a href="http://templated.co" rel="nofollow">TEMPLATED</a>.</p>
 </div>
 </body>
 <script>
-new Vue().$mount('#featured');
+new Vue().$mount('#page');
 </script>
 </html>
