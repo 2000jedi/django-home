@@ -8,7 +8,7 @@
 		margin: 0px;
 		padding: 0px;
 		background: #191919;
-		font-family: 'Source Sans Pro', sans-serif;
+		/* font-family: 'Source Sans Pro', sans-serif; */
 		font-size: 12pt;
 		font-weight: 400;
 		color: #4E4D4D;
@@ -53,8 +53,7 @@
 	
 	.container
 	{
-		width: 1200px;
-		margin: 0px auto;
+		margin: 0px 8%;
 	}
 
 /*********************************************************************************/
@@ -344,13 +343,12 @@
 	#content
 	{
 		float: left;
-		width: 588px;
 		text-align: center;
 	}
 	
 	#content .title
 	{
-		padding: 1em 2em 2em 2em;
+		/* padding: 1em 2em 2em 2em; */
 		text-align: center;
 	}
 	
@@ -363,16 +361,6 @@
 	{
 		padding-top: 0;
 		font-size: 1.5em;
-	}
-
-/*********************************************************************************/
-/* Sidebar                                                                       */
-/*********************************************************************************/
-
-	#sidebar
-	{
-		float: right;
-		width: 588px;
 	}
 
 /*********************************************************************************/
@@ -390,7 +378,7 @@
 	#copyright
 	{
 		overflow: hidden;
-		padding: 5em 0em;
+		padding: 1em 0em;
 	}
 	
 	#copyright p
@@ -400,6 +388,7 @@
 		text-transform: uppercase;
 		font-size: 0.80em;
 		color: #6F6F6F;
+		margin: 0;
 	}
 	
 	#copyright a
