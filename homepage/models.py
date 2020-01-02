@@ -16,9 +16,9 @@ class HomeConfig(models.Model):
 
 class Project(models.Model):
     title      = models.CharField(max_length=100, primary_key=True, unique=True)
-    short_desc = models.CharField(max_length=255, blank=True)
-    long_desc  = MarkdownxField()
-    github_url = models.URLField(null=True)
+    short_desc = models.CharField(max_length=255)
+    long_desc  = MarkdownxField(blank=True)
+    github_url = models.URLField(null=True, blank=True)
     showcase   = models.IntegerField(default=-1)
     date       = models.DateField()
 
@@ -31,7 +31,7 @@ class Project(models.Model):
 class Photo(models.Model):
     name    = models.CharField(max_length=100, primary_key=True, unique=True)
     photo   = models.ImageField(upload_to='photos')
-    project = models.ForeignKey(Project, on_delete=models.SET_NULL, null=True)
+    project = models.ForeignKey(Project, on_delete=models.SET_NULL, null=True, blank=True)
 
 class PortfolioData(models.Model):
     firstname = models.CharField(max_length=20)
@@ -55,8 +55,8 @@ class Portfolio(models.Model):
     )
     name       = models.CharField(max_length=100)
     date_begin = models.DateField()
-    date_end   = models.DateField()
-    desc       = models.TextField(blank=True)
+    date_end   = models.DateField(null=True, blank=True)
+    desc       = models.TextField(null=True, blank=True)
 
     def __str__(self):
         return self.choice + ': ' + self.name
