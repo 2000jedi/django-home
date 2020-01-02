@@ -22,7 +22,7 @@ def index(request):
 
 def project_home(request):
     homeConfig = models.HomeConfig.objects.all()[0]
-    projects = models.Project.objects.all()
+    projects = models.Project.objects.order_by('-date')
 
     mod = {
         'server' : homeConfig.server,
